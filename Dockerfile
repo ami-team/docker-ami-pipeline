@@ -12,12 +12,9 @@ LABEL description="AMI Pipeline"
 
 ########################################################################################################################
 
-RUN npm install npm install github:ami-team/node-red-contrib-ami
+RUN npm install github:ami-team/node-red-contrib-ami
 
 ########################################################################################################################
-
-COPY ami.css /ami.css
-COPY ami.png /ami.png
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 

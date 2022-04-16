@@ -26,6 +26,10 @@ AMI Pipeline
 
 Node-RED-based task pipeline.
 
+```bash
+docker run -it -p 1880:1880 --volume amipipeline_data:/data --name amipipeline amiteam/pipeline
+```
+
 Developers
 ==========
 
