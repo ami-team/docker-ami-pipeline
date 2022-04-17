@@ -2,7 +2,7 @@
 
 ########################################################################################################################
 
-sed -i "s/\/\/\s*theme\s*:.*$/page: {css: \"\/usr\/src\/node-red\/node_modules\/node-red-contrib-ami\/style\/ami.css\"}, header: {image: \"\/usr\/src\/node-red\/node_modules\/node-red-contrib-ami\/style\/ami.png\", title: 'pipeline'},/g" /data/settings.js
+sed -i "s/\/\/\s*theme\s*:.*$/page: {title: \"AMI-pipeline\", favicon: \"\/usr\/src\/node-red\/node_modules\/node-red-contrib-ami\/style\/login.png\", css: \"\/usr\/src\/node-red\/node_modules\/node-red-contrib-ami\/style\/ami.css\"}, header: {image: \"\/usr\/src\/node-red\/node_modules\/node-red-contrib-ami\/style\/logo.png\", title: \"pipeline\"}, login: {image: \"\/usr\/src\/node-red\/node_modules\/node-red-contrib-ami\/style\/login.png\"},/g" /data/settings.js
 
 sed -i "s/\/\/\s*categories\s*:\s*\[/categories: ['AMI', /g" /data/settings.js
 
