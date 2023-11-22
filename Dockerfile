@@ -12,7 +12,7 @@ LABEL description="AMI Pipeline"
 
 ########################################################################################################################
 
-RUN npm install github:ami-team/node-red-contrib-ami
+RUN npm install --force github:ami-team/node-red-contrib-ami
 
 ########################################################################################################################
 
