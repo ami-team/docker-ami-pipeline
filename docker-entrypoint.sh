@@ -2,17 +2,11 @@
 
 ########################################################################################################################
 
-sed -i "s/\/\/\s*theme\s*:.*$/page: {title: \"AMI-pipeline\", favicon: \"\/usr\/src\/node-red\/node_modules\/node-red-contrib-ami\/style\/login.png\", css: \"\/usr\/src\/node-red\/node_modules\/node-red-contrib-ami\/style\/ami.css\"}, header: {image: \"\/usr\/src\/node-red\/node_modules\/node-red-contrib-ami\/style\/logo.png\", title: \"pipeline\"}, login: {image: \"\/usr\/src\/node-red\/node_modules\/node-red-contrib-ami\/style\/login.png\"},/g" /data/settings.js
-
-sed -i "s/\/\/\s*categories\s*:\s*\[/categories: ['AMI', /g" /data/settings.js
-
-########################################################################################################################
-
-if [ ! -f /data/flows.json ]
+if [ ! -f /AMIPipeline/data/node-red/flows.json ]
 then
   UUID=$(node -e 'console.log(require("crypto").randomUUID());')
 
-  cat > /data/flows.json << EOF
+  cat > /AMIPipeline/data/node-red/flows.json << EOF
 [
     {
         "id": "7ba8d1fbe3577553",
@@ -112,6 +106,10 @@ fi
 
 ########################################################################################################################
 
-npm --no-update-notifier --no-fund start --cache /data/.npm -- --userDir /data
+npm install --force
+
+########################################################################################################################
+
+node ./ami-pipeline.js
 
 ########################################################################################################################
