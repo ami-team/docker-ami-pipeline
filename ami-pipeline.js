@@ -4,6 +4,7 @@
 import fs from 'fs';
 import url from 'url';
 import path from 'path';
+import env from 'process';
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
@@ -25,6 +26,7 @@ const NODE_RED_SETTINGS = {
     uiHost: '0.0.0.0',
     httpNodeRoot: '/api',
     httpAdminRoot: '/',
+    credentialSecret: env.NODE_RED_CREDENTIAL_SECRET || null,
     userDir: path.join(DIR_PATH, 'data', 'node-red'),
     flowFile: 'flows.json',
     flowFilePretty: true,
