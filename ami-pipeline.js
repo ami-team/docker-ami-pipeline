@@ -26,6 +26,8 @@ const NODE_RED_SETTINGS = {
     httpNodeRoot: '/api',
     httpAdminRoot: '/',
     userDir: path.join(DIR_PATH, 'data', 'node-red'),
+    flowFile: 'flows.json',
+    flowFilePretty: true,
     editorTheme: {
         page: {
             css: path.join(DIR_PATH, 'node_modules', 'node-red-contrib-ami', 'style', 'ami.css'),
