@@ -57,7 +57,7 @@ const app = express();
 
 let httpsServer;
 
-if(env.NODE_RED_SECURED || false)
+if(env.NODE_RED_SECURED === 'TRUE' || env.NODE_RED_SECURED === 'true')
 {
     /*----------------------------------------------------------------------------------------------------------------*/
 
