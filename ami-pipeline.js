@@ -53,13 +53,11 @@ const NODE_RED_SETTINGS = {
 
 const app = express();
 
-const isSecured = process.argv.slice(2).includes('--secured');
-
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 let httpsServer;
 
-if(isSecured)
+if(env.NODE_RED_SECURED || false)
 {
     /*----------------------------------------------------------------------------------------------------------------*/
 
