@@ -21,6 +21,8 @@ const DIR_PATH = path.dirname(url.fileURLToPath(import.meta.url));
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
+console.log(`NODE_RED_CREDENTIAL_SECRET: ${env.NODE_RED_CREDENTIAL_SECRET}`);
+
 const NODE_RED_SETTINGS = {
     uiPort: 1880,
     uiHost: '0.0.0.0',
@@ -46,6 +48,8 @@ const NODE_RED_SETTINGS = {
         },
     },
 };
+
+console.log(`NODE_RED_SETTINGS.credentialSecret: ${NODE_RED_SETTINGS.credentialSecret}`);
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* APPLICATION                                                                                                        */
