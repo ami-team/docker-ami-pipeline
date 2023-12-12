@@ -5,6 +5,8 @@
 export NODE_RED_SECURED
 export NODE_RED_CREDENTIAL_SECRET
 
+echo "NODE_RED_CREDENTIAL_SECRET: $NODE_RED_CREDENTIAL_SECRET"
+
 ########################################################################################################################
 
 mkdir -p /AMIPipeline/data/node-red/
