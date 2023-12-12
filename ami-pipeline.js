@@ -4,7 +4,6 @@
 import fs from 'fs';
 import url from 'url';
 import path from 'path';
-import env from 'process';
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
@@ -21,14 +20,12 @@ const DIR_PATH = path.dirname(url.fileURLToPath(import.meta.url));
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
-console.log(`NODE_RED_CREDENTIAL_SECRET: ${env.NODE_RED_CREDENTIAL_SECRET}`);
-
 const NODE_RED_SETTINGS = {
     uiPort: 1880,
     uiHost: '0.0.0.0',
     httpNodeRoot: '/api',
     httpAdminRoot: '/',
-    credentialSecret: env.NODE_RED_CREDENTIAL_SECRET || null,
+    credentialSecret: process.env.NODE_RED_CREDENTIAL_SECRET || null,
     userDir: path.join(DIR_PATH, 'data', 'node-red'),
     flowFile: 'flows.json',
     flowFilePretty: true,
@@ -49,8 +46,6 @@ const NODE_RED_SETTINGS = {
     },
 };
 
-console.log(`NODE_RED_SETTINGS.credentialSecret: ${NODE_RED_SETTINGS.credentialSecret}`);
-
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* APPLICATION                                                                                                        */
 /*--------------------------------------------------------------------------------------------------------------------*/
@@ -61,7 +56,7 @@ const app = express();
 
 let httpsServer;
 
-if(env.NODE_RED_SECURED === 'TRUE' || env.NODE_RED_SECURED === 'true')
+if(process.env.NODE_RED_SECURED === 'TRUE' || process.env.NODE_RED_SECURED === 'true')
 {
     /*----------------------------------------------------------------------------------------------------------------*/
 
